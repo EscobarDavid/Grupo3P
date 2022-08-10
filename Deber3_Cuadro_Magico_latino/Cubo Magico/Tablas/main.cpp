@@ -35,7 +35,8 @@ int main()
     cout << "2. Resolucion de cubo magico (Michell)" << endl;
     cout << "3. Resolucion de cubo magico (Lizardo)" << endl;
     cout << "4. Resolucion de cuadrado latino (David)" << endl;
-    cout << "5. Salir" << endl;
+    cout << "5. Resolucion el codigo de pascal"<<endl;
+    cout << "6. Salir" << endl;
     cout << "Ingrese una opcion: ";
     cin >> opcion;
     if(isNumber(opcion)){
@@ -64,6 +65,15 @@ int main()
                     system("pause");
                     break;
                 case 5:
+                    system("cls");
+                    int n;
+                    cout<<"Ingrese la dimension de la piramide: "<<endl;
+                    cin>>n;
+                    cubo.resolucionPiramidePascal(n);
+                    cout<<endl;
+                    system("pause");
+                    break;
+                case 6:
                     cout << "Saliendo del programa" << endl;
                     system("pause");
                     break;
@@ -77,7 +87,7 @@ int main()
             system("pause");
         }
         system ("cls");
-    }while(opcion != "5");
+    }while(opcion != "6");
 }
 
 bool isNumber(string str) {
@@ -99,6 +109,7 @@ void cuboMagicoLizardo(){
                 dim=ingreso.leer("Ingrese el orden (impar entre 3 y 15) : ",2);
                 istringstream (dim) >> num;
             }while(num%2==0||num<0);
+
                 num=2*num-1;
 
                 cuadrado=(int**)calloc(num,sizeof(int*));

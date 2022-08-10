@@ -28,6 +28,9 @@ public:
     void cuadradoLatino();
     void cuboMagicoCamila();
     void cuboMagicoMishell();
+    void Prueba();
+    void resolucionPiramidePascal(int n);
+
 
 };
 
@@ -45,7 +48,12 @@ void CuboMagico::setCuboMagicoCuadrado(int **_cuadrado){
 
 
 void CuboMagico::llenar(int a,int b){
-    int x=0,k=0,p=1,j=0,t=0,s=0,d=0;
+    int x=0,k=0,p,j=0,t=0,s,d=0;
+    cout<<"Ingrese el valor de incremento"<<endl;
+    cin>>p;
+    cout<<"Ingrese el valor de inicio"<<endl;
+    cin>>s;
+
         x=(b-1)/2;
         t=((a+1)/2);
         s=(a-x-1)/2;
@@ -90,19 +98,16 @@ void CuboMagico::mostrar(int a,int b){
                 }
         	}
 		}
-         cout <<"\n\n Suma = "<<((t*(t*t+1))/2)<<" -> Constante Magica"<<endl;
 }
 
 
 
 void CuboMagico :: cuboMagicoCamila(){
-int cuadrado[15][15],x,y,n,N;
+int cuadrado[15][15],x,y,n,N,centinela = 0,patron;
     do{
         cout<<"\n\tIngrese el orden (impar entre 3 y 15) : "<<endl;
         cin>>N;
     }while(!(N%2));
-        cout<<"\nCuadrado Magico de orden "<<N<<"x"<<N<<endl;
-
         for(x=0;x<N;x++)
         for(y=0;y<N;y++)
             cuadrado[x][y]=0;
@@ -126,6 +131,30 @@ int cuadrado[15][15],x,y,n,N;
         cout <<"\n\n Suma = "<<((N*(N*N+1))/2)<<" -> Constante Magica"<<endl;
 
 }
+
+void CuboMagico :: resolucionPiramidePascal(int n){
+
+    for (int i = 1; i <= n; i++)
+	{ 
+		int proceso = 1; 
+
+		for (int j = 1; j < (n - i + 1); j++){
+			cout << " ";
+		}
+
+		for (int k = 1; k <= i; k++)
+		{
+
+			cout << "  " << proceso ;
+			proceso = proceso * (i - k) / k;
+		}
+
+		cout << endl << endl;
+	}
+    cout << endl;
+}
+    
+
 
 
 
@@ -158,14 +187,13 @@ void CuboMagico :: cuadradoLatino(){
 
 void CuboMagico :: cuboMagicoMishell(){
     int arr[P][P] = {0};
-	int x=0,y,s=1,i,j,n=2,oldx,oldy;
+	int x=0,y,s=1,i,j,n=2,oldx,oldy,centinela=0, patron;
 	
 	while(n%2 == 0 || n > 15){
         cout<<"\n\tIngrese el orden (impar entre 3 y 15) : "<<endl;
         cin>>n;
 	}
 	y=n/2;
- 
     cout<<"\nCuadrado Magico de orden "<<n<<"x"<<n<<endl;
 	arr[x][y] = s;
 	oldx = x;
@@ -199,4 +227,49 @@ void CuboMagico :: cuboMagicoMishell(){
 	}
     cout <<"\n\n Suma = "<<((n*(n*n+1))/2)<<" -> Constante Magica"<<endl;
 
+}
+
+void CuboMagico :: Prueba(){
+    int arr[P][P] = {0};
+    int patron = 0 , centinela  =0,N,oldx,oldy,x,y,i,j,n=2,s;
+    do{
+        cout<<"\n\tIngrese el orden (impar entre 3 y 15) : "<<endl;
+        cin>>N;
+    }while(!(N%2));
+    cout <<"Ingrese el centinela"<<endl;
+    cin>>centinela;
+    cout <<"Ingrese el patron"<<endl;
+    cin>>patron;
+
+    //funcion para sumar el centinela y el patron y luego el valor de la suma + el centinela
+    int suma = centinela + patron;
+    while (suma < N*N){
+        suma = suma + centinela;
+    }
+    cout<<"\nCuadrado Magico de orden "<<N<<"x"<<N<<endl;
+    
+    for(int i = 0;i < N;i++){
+        for(int j = 0;j < N;j++){
+            arr[i][j] = suma;
+            suma = suma + centinela;
+        }
+    }
+    for(i = 0;i < N;i++){
+        for(j = 0;j < N;j++){
+            printf("%d\t",arr[i][j]);
+        }
+        printf("\n\n");
+    }
+   
+    
+
+    
+
+    
+    
+   
+
+
+  
+   
 }
