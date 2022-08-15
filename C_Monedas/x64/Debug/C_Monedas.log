@@ -1,0 +1,6 @@
+﻿  C_Monedas.cpp
+C:\Users\Cmcs\Desktop\C_Monedas\C_Monedas.cpp(18,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Cambio.cpp
+C:\Users\Cmcs\Desktop\C_Monedas\Cambio.cpp(15,22): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  C_Monedas.vcxproj -> C:\Users\Cmcs\Desktop\C_Monedas\x64\Debug\C_Monedas.exe
