@@ -1,6 +1,1 @@
-﻿  C_Monedas.cpp
-C:\Users\Cmcs\Desktop\C_Monedas\C_Monedas.cpp(18,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Cambio.cpp
-C:\Users\Cmcs\Desktop\C_Monedas\Cambio.cpp(15,22): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  C_Monedas.vcxproj -> C:\Users\Cmcs\Desktop\C_Monedas\x64\Debug\C_Monedas.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(67,5): error MSB8020: No se pueden encontrar las herramientas de compilación para v143 (Conjunto de herramientas de la plataforma = 'v143'). Para compilar con las herramientas de compilación v143, instale las herramientas de compilación v143. También puede actualizar a las herramientas actuales de Visual Studio. Para ello, seleccione el menú Proyecto o haga clic con el botón secundario en la solución y, a continuación, seleccione "Actualizar solución".

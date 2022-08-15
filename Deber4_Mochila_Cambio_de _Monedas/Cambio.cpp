@@ -1,73 +1,54 @@
 /*
 	Universidad de las Fuerzas Armadas "ESPE"
-	Deber: Mochila - Cambio de moneda 
-	Arias Sebasti�n, Escobar David, Portilla Diego, Valdiviezo Darwin, Y�nez Michelle
-	Fecha de creaci�n: 13/08/2022
-	Fecha de modificaci�n: 14/08/2022
+	Deber Cambio  de monedas.
+	Arias Sebastián, Escobar David, Portilla Diego, Valdiviezo Darwin, Yánez Michelle
+	Fecha de creación: 14/08/2022
+	Fecha de modificación: 14/08/2022
 	Grupo 8
-	
+	https://github.com/EscobarDavid/Grupo3P
 */
-
 
 #include "Cambio.h"
 
-void Cambio::backtraking(int cantidad, int cambio[], int n, int indice)
+void Cambio::gen_cambio()
 {
-    int c1 = 0, c2 = 0, c3 = 0, c = 0, c4 = 0, total=0;
-        if (cantidad < 0) {
-           return;
-        }
+	int cantidad_entera = cantidad * 100;
+	int monedas[5] = { 50, 25, 10, 5, 1 };
+	int moneadas_cambio[5] = { 0,0,0,0,0 };
+	int num_aleatorio = rand() % 5;
+	int cambio;
 
-        if (cantidad == 0) {
-            for (int i = 0; i < v.size(); i++)
-            {
-                if (v.at(i) == 50)
-                {
-                    c++;
-                }
-                if (v.at(i) == 25)
-                {
-                    c1++;
-                }
-                if (v.at(i) == 10)
-                {
-                    c2++;
-                }
-                if (v.at(i) == 5)
-                {
-                    c3++;
-                }
-                if (v.at(i) == 1)
-                {
-                    c4++;
-                }
-            }
-            total = c +c1 + c2 + c3 + c4 ;
-            if (total == cantidad)
-            {
-                for (int i = 0; i < v.size(); i++)
-                {
-                    cout << v.at(i) << " ";
-                }
-                cout << endl;
-            }
-            v1.push_back(total);
-            if (total== *min_element(std::begin(v1), std::end(v1)))
-            {
-                cout << "\n";
-                cout << "Total Monedas " << total << endl;
-                cout << "Numero de 50 centavos: " << c << endl;
-                cout << "Numero de 25 centavos: " << c1 << endl;
-                cout << "Numero de 10 centavos: " << c2 << endl;
-                cout << "Numero de 5 centavos: " << c3 << endl;
-                cout << "Numero de 1 centavos: " << c4 << endl;
-            }
-        }
-        for (int i = indice; i < n; ++i) {
-                v.push_back(cambio[i]);
-                backtraking(cantidad - cambio[i], cambio, n, i);
-                v.pop_back();
-        }
+	while (cantidad_entera < monedas[num_aleatorio]) {
+		num_aleatorio = rand() % 5;
+	}
+
+	cambio = cantidad_entera / monedas[num_aleatorio];
+
+	while (cambio < 1)
+	{
+		num_aleatorio = rand() % 5;
+		cambio = cantidad_entera / monedas[num_aleatorio];
+	}
+
+	moneadas_cambio[num_aleatorio] = cambio;
+
+	int restante = cantidad_entera - (monedas[num_aleatorio] * cambio);
+	int resto_cambio = num_aleatorio;
+	while (restante > 0) {
+		if (num_aleatorio != resto_cambio) {
+			cambio = restante / monedas[resto_cambio];
+
+			if (cambio >= 1) {
+				moneadas_cambio[resto_cambio] = cambio;
+			}
+			restante -= cambio * monedas[resto_cambio];
+
+		}
+		resto_cambio++;
+	}
+	cout << "Total Monedas " << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "De " << monedas[i] << " centavos: " << moneadas_cambio[i] << endl;
+	}
 }
-
-

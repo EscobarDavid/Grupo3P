@@ -12,6 +12,7 @@
 #include "mochila.h"
 #include "Cambio.h"
 #include "Cambio.cpp"
+#include <time.h>
 #include <iostream>
 using namespace std;
 
@@ -64,13 +65,11 @@ int main()
 
 
 void cambioDinero(){
-    Cambio c;
-	int cantidad = 0;
-	int d[100] = {50,25,10,5,1};
-	int n = 5;
-	cout << "Ingrese la cantidad de monedas  a cambiar: ";
-	cin >> cantidad;
-	c.backtraking(cantidad, d, n, 0);
+    srand(time(NULL));
+	Cambio cambio_monedas;
+	cout << " Ingrese cantidad: " << endl;
+	cin >> cambio_monedas.cantidad;
+	cambio_monedas.gen_cambio();
 }
 
 void mochila(){
