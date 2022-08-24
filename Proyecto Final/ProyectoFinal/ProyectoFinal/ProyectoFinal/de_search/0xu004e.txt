@@ -1,0 +1,8 @@
+NO
+ 10,3
+NOMBRE
+ 3
+NUEVO
+ 1
+NÚMERO
+ 10

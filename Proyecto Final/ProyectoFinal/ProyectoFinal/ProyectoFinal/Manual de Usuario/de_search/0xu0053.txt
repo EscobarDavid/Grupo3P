@@ -1,0 +1,14 @@
+SE
+ 6,3,2
+SER
+ 5
+SERIE
+ 4
+SI
+ 3
+SIN
+ 10
+SISTEMA
+ 5,2,6,9,8,7,3
+SOLICITA
+ 2

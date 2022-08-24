@@ -1,0 +1,12 @@
+EFECTUADO
+ 5
+EJECUCION
+ 5
+EL
+ 5,6,4,3,9,8,7,2
+EN
+ 5,7,6,2
+ES
+ 5
+ESTE
+ 5,6,10,9,8,7

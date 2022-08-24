@@ -1,0 +1,118 @@
+\hypertarget{registro_8h_source}{}\doxysection{registro.\+h}
+\mbox{\hyperlink{registro_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{archivo_8h}{archivo.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{menu_8h}{menu.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{menu__option_8h}{menu\_option.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{27 \textcolor{keywordtype}{void} \mbox{\hyperlink{registro_8h_a714c83c6898e18f73621626df5bb59c3}{registration}}() \{}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} v = 0;}
+\DoxyCodeLine{29     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{30     fflush(stdin);}
+\DoxyCodeLine{31     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tRegistrarse"{}} << endl;}
+\DoxyCodeLine{32     fflush(stdin);}
+\DoxyCodeLine{33     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nNombre: "{}};}
+\DoxyCodeLine{34     cin >> \mbox{\hyperlink{archivo_8h_aeaf846aa21a7d016a52f0b5b0c2f5544}{name}};}
+\DoxyCodeLine{35     \textcolor{comment}{//system("{}pause"{});}}
+\DoxyCodeLine{36     fflush(stdin);}
+\DoxyCodeLine{37     std::cout << \textcolor{stringliteral}{"{}Contrasenia: "{}};}
+\DoxyCodeLine{38     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 60; i++) \{}
+\DoxyCodeLine{39         v = \_getch();}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} ((v >= 48 \&\& v <= 57) || (v >= 65 \&\& v <= 90) || (v >= 97 \&\& v <= 122)) \{}
+\DoxyCodeLine{41             \mbox{\hyperlink{archivo_8h_adc7ce2b0b055ab38114ed2d6cdf547c8}{aux\_pass}}[i] = v;}
+\DoxyCodeLine{42             std::cout << \textcolor{stringliteral}{"{}*"{}};}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (v == 13) \{}
+\DoxyCodeLine{45             \mbox{\hyperlink{archivo_8h_adc7ce2b0b055ab38114ed2d6cdf547c8}{aux\_pass}}[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{46             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49     \mbox{\hyperlink{archivo_8h_a543ce0d7b42f492162d73ad4880d58c4}{pass}} = \mbox{\hyperlink{archivo_8h_adc7ce2b0b055ab38114ed2d6cdf547c8}{aux\_pass}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//cin.getline(pass, 100, '\(\backslash\)n');}}
+\DoxyCodeLine{52     fflush(stdin);}
+\DoxyCodeLine{53     \mbox{\hyperlink{archivo_8h_a8688be4caef7cc809832e9c58a42dd24}{insert}}(\mbox{\hyperlink{archivo_8h_aeaf846aa21a7d016a52f0b5b0c2f5544}{name}}, \mbox{\hyperlink{archivo_8h_a543ce0d7b42f492162d73ad4880d58c4}{pass}});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} \mbox{\hyperlink{registro_8h_af76b7b46958dabf5e4ee9a492f0ec3fa}{login}}() \{}
+\DoxyCodeLine{61     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{62         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{63         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tLOG IN"{}} << endl;}
+\DoxyCodeLine{64         fflush(stdin);}
+\DoxyCodeLine{65         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nNombre: "{}};}
+\DoxyCodeLine{66         cin >> \mbox{\hyperlink{archivo_8h_a6a25c9dd189923f332bbeccdb92cf371}{nameaux}};}
+\DoxyCodeLine{67         fflush(stdin);}
+\DoxyCodeLine{68         std::cout << \textcolor{stringliteral}{"{}Contrasenia: "{}};}
+\DoxyCodeLine{69         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 60; i++) \{}
+\DoxyCodeLine{70             \textcolor{keywordtype}{int} v = \_getch();}
+\DoxyCodeLine{71             \textcolor{keywordflow}{if} ((v >= 48 \&\& v <= 57) || (v >= 65 \&\& v <= 90) || (v >= 97 \&\& v <= 122)) \{}
+\DoxyCodeLine{72                 \mbox{\hyperlink{archivo_8h_a5f4ea2d487bb857a19ed73b31ca7621c}{passaux}}[i] = v;}
+\DoxyCodeLine{73                 std::cout << \textcolor{stringliteral}{"{}*"{}};}
+\DoxyCodeLine{74             \}}
+\DoxyCodeLine{75             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (v == 13) \{}
+\DoxyCodeLine{76                 \mbox{\hyperlink{archivo_8h_a5f4ea2d487bb857a19ed73b31ca7621c}{passaux}}[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{77                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{78             \}}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         fflush(stdin);}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (strcmp(\mbox{\hyperlink{archivo_8h_a6a25c9dd189923f332bbeccdb92cf371}{nameaux}}, \mbox{\hyperlink{archivo_8h_aeaf846aa21a7d016a52f0b5b0c2f5544}{name}}) == 0 \&\& strcmp(\mbox{\hyperlink{archivo_8h_a5f4ea2d487bb857a19ed73b31ca7621c}{passaux}}, \mbox{\hyperlink{archivo_8h_a543ce0d7b42f492162d73ad4880d58c4}{pass}}) == 0) \{}
+\DoxyCodeLine{82             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tBienvenido "{}} << \mbox{\hyperlink{archivo_8h_aeaf846aa21a7d016a52f0b5b0c2f5544}{name}} << endl;}
+\DoxyCodeLine{83             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{archivo_8h_a5cb549e3882ed95e78500aa2a8675e71}{readfile}}(\mbox{\hyperlink{archivo_8h_a6a25c9dd189923f332bbeccdb92cf371}{nameaux}}, \mbox{\hyperlink{archivo_8h_a5f4ea2d487bb857a19ed73b31ca7621c}{passaux}})) \{}
+\DoxyCodeLine{86             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tBienvenido "{}} << \mbox{\hyperlink{archivo_8h_a6a25c9dd189923f332bbeccdb92cf371}{nameaux}} << endl;}
+\DoxyCodeLine{87             system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{88             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{91             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)tError en nombre o contrasenia"{}} << endl;}
+\DoxyCodeLine{92             system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94         system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{95     \} \textcolor{keywordflow}{while} (\textcolor{keyword}{true});}
+\DoxyCodeLine{96 \}}
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{registro_8h_ad0d3f4caf2bfcc003623d003da5bdece}{registro}}() \{}
+\DoxyCodeLine{102     \textcolor{keywordtype}{int} option;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{char} answer;}
+\DoxyCodeLine{104     \mbox{\hyperlink{class_menu}{Menu}} m(\textcolor{stringliteral}{"{}\(\backslash\)nBIENVENIDO"{}});}
+\DoxyCodeLine{105     m.\mbox{\hyperlink{class_menu_af00883540de9adcb6ad516e897c19cd2}{add\_option}}(\mbox{\hyperlink{class_menu_option}{MenuOption}}(\textcolor{stringliteral}{"{}1. Registrarse"{}}, [\&](\mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} args) \{}
+\DoxyCodeLine{106         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{107         \mbox{\hyperlink{registro_8h_a714c83c6898e18f73621626df5bb59c3}{registration}}();}
+\DoxyCodeLine{108         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)nDesea iniciar sesion? (s/n): "{}};}
+\DoxyCodeLine{109         cin >> answer;}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} (answer == \textcolor{charliteral}{'s'} || answer == \textcolor{charliteral}{'S'}) \{}
+\DoxyCodeLine{111             \mbox{\hyperlink{registro_8h_af76b7b46958dabf5e4ee9a492f0ec3fa}{login}}();}
+\DoxyCodeLine{112             system(\textcolor{stringliteral}{"{}pause"{}});}
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{115             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{116         \}}
+\DoxyCodeLine{117         m.\mbox{\hyperlink{class_menu_a14199ea81c4618e3cb599d58e0633db0}{stop}}();}
+\DoxyCodeLine{118         \}));}
+\DoxyCodeLine{119     m.\mbox{\hyperlink{class_menu_af00883540de9adcb6ad516e897c19cd2}{add\_option}}(\mbox{\hyperlink{class_menu_option}{MenuOption}}(\textcolor{stringliteral}{"{}2. Ingresar"{}}, [\&](\mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} args) \{}
+\DoxyCodeLine{120         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{121         \mbox{\hyperlink{registro_8h_af76b7b46958dabf5e4ee9a492f0ec3fa}{login}}();}
+\DoxyCodeLine{122         m.\mbox{\hyperlink{class_menu_a14199ea81c4618e3cb599d58e0633db0}{stop}}();}
+\DoxyCodeLine{123         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{124         \}));}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     m.\mbox{\hyperlink{class_menu_af00883540de9adcb6ad516e897c19cd2}{add\_option}}(\mbox{\hyperlink{class_menu_option}{MenuOption}}(\textcolor{stringliteral}{"{}3. Salir"{}}, [\&](\mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} args) \{}
+\DoxyCodeLine{127         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{128         cout << \textcolor{stringliteral}{"{} "{}} << endl;}
+\DoxyCodeLine{129         std::cout << \textcolor{stringliteral}{"{}Salio con exito del programa..."{}} << std::endl;}
+\DoxyCodeLine{130         exit(1);}
+\DoxyCodeLine{131         \}, \textcolor{keyword}{false}));}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     m.\mbox{\hyperlink{class_menu_a2e784e39d600214e778acbfcbfe04a1b}{display}}();}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+
+\end{DoxyCode}
